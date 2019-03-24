@@ -149,6 +149,9 @@ local function handleBit(window)
 		bitCounter = bitCounter + 1
 		if bitCounter == 8 then
 			temp2 = temp1 * 256 + byte
+			if temp2 >= 2^11 then
+				temp2 = temp2 - 2^12
+			end
 			bitState = "humidity"
 			bitCounter = 0
 		end

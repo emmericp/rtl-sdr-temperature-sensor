@@ -50,6 +50,6 @@ PPPP UUUUUUUUUU CC TTTT TTTTTTTT HHHHHHHH RR
 
 ## Application layer
 
-* First nibble and the next byte are the temperature in °C/10 (big endian)
+* First nibble and the next byte are the temperature in °C/10 (big endian, two's complement)
 * The last byte is the relative humidity in percent
 
