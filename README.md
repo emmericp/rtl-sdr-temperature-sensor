@@ -39,11 +39,11 @@ This means the byte in the image above decodes to `0b10111111` = `0xBF`
 A frame looks like this (each character is a bit):
 
 ```
-PPPPPP UUUUUUUU CC TTTT TTTTTTTT HHHHHHHH RR
+PPPP UUUUUUUUUU CC TTTT TTTTTTTT HHHHHHHH RR
 ```
 
-* `PPPPPP` is a preamble, always set to `100100`
-* `UUUUUUUU` are 8 bits of unknown data. (No, it's not a checksum)
+* `PPPP` is a preamble, always set to `1001`
+* `UUUUUUUUUU` are 10 bits of unknown data that seem to change randomly (No, it's not a checksum)
 * `CC` is the channel set on the transmitter `00` to `10` for channels 1 to 3
 * `T` and `H` are the data of the next higher layer: temperature and humidity values
 * `RR` marks retransmissions: each frame is repeated 5 times, the first one ends with `11` the others with `01`

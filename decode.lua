@@ -121,13 +121,13 @@ local function handleBit(window)
 	local byte = bitWindowToByte(window)
 	local nibble = bitWindowToNibble(window)
 	if bitState == "idle" then
-		if bitWindowToNum(window, 6) == 0x24 then
+		if nibble == 9 then
 			bitState = "unknown1"
 			bitCounter = 0
 		end
 	elseif bitState == "unknown1" then
 		bitCounter = bitCounter + 1
-		if bitCounter == 8 then
+		if bitCounter == 10 then
 			bitState = "channel"
 			bitCounter = 0
 		end
